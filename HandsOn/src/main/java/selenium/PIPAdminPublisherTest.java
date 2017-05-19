@@ -23,7 +23,7 @@ public class PIPAdminPublisherTest {
         WebElement Username = driver.findElement(By.id("username"));
         Username.sendKeys("makeshk.kathirvel");
         WebElement Password = driver.findElement(By.id("password"));
-        Password.sendKeys(("aPN@5$0!="));
+        Password.sendKeys((""));
         driver.findElement(By.className("form-actions")).submit();
         System.out.println("We have entered into PIP Admin HomePage");
         driver.findElement(By.linkText("View Publishers")).click();
