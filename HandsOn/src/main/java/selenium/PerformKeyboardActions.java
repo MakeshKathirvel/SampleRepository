@@ -16,19 +16,25 @@ import java.util.concurrent.TimeUnit;
  * Created by makeshk.kathirvel on 5/19/2017.
  */
 public class PerformKeyboardActions {
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "C://Makesh_Softwares//geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
-        driver.get("http://www.espncricinfo.com/");
+        driver.get("https://www.facebook.com/");
+
+        WebElement txtUsername = driver.findElement(By.id("email"));
 
        // driver.findElement(By.linkText("INDIAN PREMIER LEAGUE")).click();
-        By IPLLinkText = By.linkText("INDIAN PREMIER LEAGUE");
+        /*By IPLLinkText = By.linkText("INDIAN PREMIER LEAGUE");
         WebDriverWait wait = new WebDriverWait(driver,5);
         wait.until(ExpectedConditions.presenceOfElementLocated(IPLLinkText));
-        WebElement element = driver.findElement(IPLLinkText);
+        WebElement element = driver.findElement(IPLLinkText);*/
         Actions builder = new Actions(driver);
-        Action rightClickIPL = builder.contextClick(element).build();
-        rightClickIPL.perform();
+        Action seriesOfActions = builder.moveToElement(txtUsername).click().keyDown(txtUsername,Keys.SHIFT).sendKeys(txtUsername,"hello").keyUp(txtUsername,Keys.SHIFT).doubleClick(txtUsername).contextClick().build();
+        seriesOfActions.perform();
+//        Action rightClickIPL = builder.contextClick().build();
+//
+//        rightClickIPL.perform();
+
 
     }
 }

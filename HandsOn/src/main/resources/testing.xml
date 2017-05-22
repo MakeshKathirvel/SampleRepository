@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testsuite" parallel="false">
+  <parameter name="author" value="Makesh"/>
+   <parameter name="searchkey" value="Android"/>
+   <test name="testDataProviderConcept">
+      <classes>
+      <class name="testng.ParameterWithTestNGXML"/>
+    </classes>
+  </test>
+</suite>
